@@ -261,7 +261,7 @@ img = cv2.resize(img,(300,200))
 cv2.imwrite('nature_pic.jpg',img)
 ```
 ![image](https://github.com/user-attachments/assets/758441b6-b46e-4003-9126-c3cdeeccd4ab)
-
+![image](https://github.com/user-attachments/assets/404d8a69-a2f4-46b6-afd3-64bf87949fbd)
 
 ## Result:
 Thus the images are read, displayed, and written ,and color conversion was performed  successfully using the python program.
