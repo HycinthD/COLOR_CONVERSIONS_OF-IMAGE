@@ -60,6 +60,7 @@ o	Save the final modified image to your local directory.
 ## Output:
 
 ### i)Read and Display an Image
+i.Load an image from your local directory and display it.
 ```
 import cv2
 image=cv2.imread('naturek.jpg',1)
@@ -82,8 +83,8 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 ![image](https://github.com/user-attachments/assets/9e9a2f00-4516-494e-ac40-e1de0d3367c7)
-2.Draw a circle at the center of the image.
 ```
+2.Draw a circle at the center of the image.
 import cv2
 image = cv2.imread("naturek.jpg")
 image = cv2.resize(image, (400, 300))
@@ -260,6 +261,7 @@ img = cv2.resize(img,(300,200))
 cv2.imwrite('nature_pic.jpg',img)
 ```
 ![image](https://github.com/user-attachments/assets/758441b6-b46e-4003-9126-c3cdeeccd4ab)
+![image](https://github.com/user-attachments/assets/25db7744-7e56-4df3-8c36-de0174f96b3d)
 
 ## Result:
 Thus the images are read, displayed, and written ,and color conversion was performed  successfully using the python program.
