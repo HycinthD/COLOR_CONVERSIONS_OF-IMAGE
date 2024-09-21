@@ -76,12 +76,7 @@ cv2.destroyAllWindows()
 ```
 import cv2
 image = cv2.imread("naturek.jpg")
-start=(0,0)
-stop=(409,529)
-color=(100,255,100)
-thickness=10
-
-res_img=cv2.rectangle(img,start,stop,color,thickness)
+res_img=cv2.rectangle(img,start=(0,0),stop=(409,529),color=(100,255,100),thickness=10)
 
 cv2.imshow('Image Window', res_img)
 cv2.waitKey(0)
@@ -90,13 +85,13 @@ cv2.destroyAllWindows()
 ![image](https://github.com/user-attachments/assets/9e9a2f00-4516-494e-ac40-e1de0d3367c7)
 
 2.Draw a circle at the center of the image.
+```
 import cv2
-image = cv2.imread("naturek.jpg")
-image = cv2.resize(image, (400, 300))
-height, width, _ = image.shape
-center_coordinates = (width // 2, height // 2)
-res = cv2.circle(image, center_coordinates, 120, (0, 255, 0), 10)
-cv2.imshow('WINDOW', res)
+image = cv2.imread("gpro.jpg")
+image = cv2.resize(image, (500, 500))
+
+res = cv2.circle(image,(250,250), 60, (0, 255, 0), 5)
+cv2.imshow('vinush', res)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
@@ -111,7 +106,7 @@ start = (150, 100)
 stop = (300, 200)
 color = (255, 255, 100)
 thickness = 10           
-res_img = cv2.rectangle(image, start, stop, color, thickness)
+res_img = cv2.rectangle(image = cv2.resize(image, (400, 300),start = (150, 100),stop = (300, 200),color = (255, 255, 100),thickness = 10 )
 cv2.imshow('WINDOW', res_img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
