@@ -86,8 +86,9 @@ res_img=cv2.rectangle(img,start,stop,color,thickness)
 cv2.imshow('Image Window', res_img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-![image](https://github.com/user-attachments/assets/9e9a2f00-4516-494e-ac40-e1de0d3367c7)
 ```
+![image](https://github.com/user-attachments/assets/9e9a2f00-4516-494e-ac40-e1de0d3367c7)
+
 2.Draw a circle at the center of the image.
 import cv2
 image = cv2.imread("naturek.jpg")
@@ -100,6 +101,7 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 ![image](https://github.com/user-attachments/assets/fcdc608e-04c8-4af8-a2d2-862ae28aac30)
+
 3.Draw a rectangle around a specific region of interest in the image.
 ```
 import cv2
