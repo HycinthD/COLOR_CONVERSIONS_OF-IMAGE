@@ -76,12 +76,16 @@ cv2.destroyAllWindows()
 ```
 import cv2
 image = cv2.imread("naturek.jpg")
-image = cv2.resize(image, (400, 300))
-res = cv2.line(image, (0, 0), (image.shape[1], image.shape[0]), (255,0,0), 10)
-cv2.imshow('WINDOW', res)
+start=(0,0)
+stop=(409,529)
+color=(100,255,100)
+thickness=10
+
+res_img=cv2.rectangle(img,start,stop,color,thickness)
+
+cv2.imshow('Image Window', res_img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-```
 ![image](https://github.com/user-attachments/assets/9e9a2f00-4516-494e-ac40-e1de0d3367c7)
 ```
 2.Draw a circle at the center of the image.
