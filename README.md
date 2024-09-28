@@ -59,209 +59,184 @@ o	Save the final modified image to your local directory.
 
 ## Output:
 
-### i)Read and Display an Image
-i.Load an image from your local directory and display it.
+### 1)Read and Display an Image
 ```
 import cv2
-image=cv2.imread('lokesh.jpg',1)
-cv2.imshow('Image Window', image)
+image=cv2.imread('imagee.jpg',1)
+image=cv2.resize(image,(400,300))
+cv2.imshow('MOON',image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()  
+```
+## Output:
+![Screenshot 2024-09-13 221341](https://github.com/user-attachments/assets/5c96b209-020e-4a50-8f4d-f2c91f21de2f)
+
+
+### 2)Draw Shapes and Add Text
+```
+image=cv2.imread('imagee.jpg')
+resr=cv2.rectangle(image,(0,0),(600,600),(0,0,250),12)
+cv2.imshow('Result',resr)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-![image](https://github.com/user-attachments/assets/75de2c2d-4648-45e9-9150-545c910743fd)
-
-
-### ii)Draw Shapes and Add Text
-(1) Draw a line from the top-left to the bottom-right of the image.
+## Output:
+![alt text](<Screenshot 2024-09-21 132000.png>)
+## i)Circle
 ```
 import cv2
-img = cv2.imread("lokesh.JPG")
-res = cv2.line(image, (0, 0), (image.shape[1], image.shape[0]), (200, 100, 205), 10)
+img = cv2.imread("imagee.jpg")
+res=cv2.circle(img,(320,295),150,(255,0,0),10)
 cv2.imshow('Image Window', res)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-![image](https://github.com/user-attachments/assets/938b4873-594c-4028-8091-f007cc4b2121)
+## Output:
+![Screenshot 2024-09-13 225721](https://github.com/user-attachments/assets/afc1e758-070b-4a17-a8c5-f02073e305a4)
 
-2.Draw a circle at the center of the image.
+## ii)Line
 ```
 import cv2
-image = cv2.imread("lokesh.jpg")
-height, width, _ = image.shape
-center_coordinates = (width // 2, height // 2)
-res = cv2.circle(image, center_coordinates, 150, (255,0, 0), 10)
+img = cv2.imread("imagee.jpg")
+res = cv2.line(img,(550,600),(0,0),(0,0,255),10)
 cv2.imshow('Image Window', res)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-![image](https://github.com/user-attachments/assets/d9cad402-c391-4795-8eac-d754f254aef5)
+Selection deleted
+## Output:
+![alt text](<Screenshot 2024-09-21 140517.png>)
 
-3.Draw a rectangle around a specific region of interest in the image.
+##  iii)Add the text "OpenCV Drawing" at the top-left corner of the image.
 ```
 import cv2
-image = cv2.imread("lokesh.JPG")
-start=(0,0)
-stop=(689,389)
-color=(100,255,100)
-thickness=10
-res_img=cv2.rectangle(image,start,stop,color,thickness)
-cv2.imshow('Image Window', res_img)
+image = cv2.imread("imagee.jpg")
+text = "Stars and the Moon"
+res = cv2.putText(image, text, (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255,0),5)
+cv2.imshow('WINDOW', res)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-![image](https://github.com/user-attachments/assets/67e0786e-2427-43ae-b2f8-5c9a88f0b4a7)
+## Output:
+![Screenshot 2024-09-13 230345](https://github.com/user-attachments/assets/6ff1bf4b-330e-4f6c-aeba-3f394a9ecaee)
 
-4.Add the text "OpenCV Drawing" at the top-left corner of the image.
-```
 
-import cv2
-img = cv2.imread("lokesh.JPG")
-text = "OPENCV DRAWING"
-position = (50, 50)
-font = cv2.FONT_HERSHEY_SIMPLEX
-font_scale = 1
-color = (255, 255, 255) 
-thickness = 2
-res = cv2.putText(img, text, position, font, font_scale, color, thickness, cv2.LINE_AA)
-cv2.imshow('Image Window', res)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-```
-![image](https://github.com/user-attachments/assets/5d6e32eb-be23-4de5-8e31-7e728d82f3fa)
-
-### iii)Image Color Conversion
-(i)Convert the image from RGB to HSV and display it
+### 3)Image Color Conversion
 ```
 import cv2
-img = cv2.imread('lokesh.jpg',1)
+img = cv2.imread('imagee.jpg',1)
 cv2.imshow('Original Image',img)
-BGR = cv2.cvtColor(img,cv2.COLOR_HSV2BGR)
-cv2.imshow('HSV2RGB',BGR)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-```
-![image](https://github.com/user-attachments/assets/51e1a598-bbfa-460b-9342-bb9e29576f70)
 
-(2) Convert the image from RGB to GRAY and display it.
-```
-import cv2
-img = cv2.imread('lokesh.jpg',1)
-cv2.imshow('Original Image',img)
+hsv2 = cv2.cvtColor(img,cv2.COLOR_RGB2HSV)
+cv2.imshow('RGB2HSV',hsv2)
+
+
 gray2 = cv2.cvtColor(img,cv2.COLOR_RGB2GRAY)
 cv2.imshow('RGB2GRAY',gray2)
+
+YCrCB2 = cv2.cvtColor(img,cv2.COLOR_RGB2YCrCb)
+cv2.imshow('RGB2YCrCB',YCrCB2)
+
+rgb = cv2.cvtColor(img,cv2.COLOR_HSV2RGB)
+cv2.imshow('RGB2YCrCB',rgb)
+
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-![image](https://github.com/user-attachments/assets/17e22465-d819-4fca-83e6-e0e511ae3702)
+## Output:
+![Screenshot 2024-09-13 231655](https://github.com/user-attachments/assets/e12eca89-c408-464d-a5ca-5ddb7aaf4ed4)
 
-(3) Convert the image from RGB to YCrCb and display it.
+### 4)Access and Manipulate Image Pixels
+### (i) Access and print the value of the pixel at coordinates (100, 100)
 ```
-import cv2
-img = cv2.imread('lokesh.jpg',1)
-cv2.imshow('Original Image',img)
-YCrCb1 = cv2.cvtColor(img, cv2.COLOR_BGR2YCrCb)
-cv2.imshow('RGB-2-YCrCb',YCrCb1)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-```
-![image](https://github.com/user-attachments/assets/04017b63-ceb7-4484-9b96-c3d7d9cb6ffb)
-
-(4) Convert the HSV image back to RGB and display it.
-```
-import cv2
-img = cv2.imread('lokesh.jpg',1)
-cv2.imshow('Original Image',img)
-BGR = cv2.cvtColor(img,cv2.COLOR_HSV2BGR)
-cv2.imshow('HSV2RGB',BGR)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-```
-![image](https://github.com/user-attachments/assets/73f4c5c7-1ecd-4c7d-b5e5-e9799f348c10)
-
-### iv)Access and Manipulate Image Pixels
-(1) Access and print the value of the pixel at coordinates (100, 100)
-```
-import cv2
-img = cv2.imread('lokesh.jpg', 1)
-cv2.imshow('Original Image', img)
 pixel_value = img[100, 100]
 print(f"Pixel value at (100, 100): {pixel_value}")
-img[199, 199] = [255, 255, 255] 
-cv2.imshow('Modified Image', img)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
 ```
-![image](https://github.com/user-attachments/assets/f766d853-eecc-44d5-95b6-557de8c917b1)
+## Output:
+![image](https://github.com/user-attachments/assets/d12550cc-4d5c-4b52-aa05-aec96709b9e3)
 
-### v)Image Resizing
-Resize the original image to half its size and display it.
-```
-width=600
-height=800
-half_width=300
-half_height=400
-resized_img = cv2.resize(image, (300, 400))
-cv2.imshow('Original',image)
-cv2.imshow('resized',resized_img)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-
-```
-![image](https://github.com/user-attachments/assets/164e4f8e-64d2-42d8-bae7-338419224a59)
-
-### vi)Image Cropping
-Crop a region of interest (ROI) from the image (e.g., a 100x100 pixel area starting at (50, 50)) and display it.
+### (ii) Modify the color of the pixel at (200, 200) to white
 ```
 import cv2
-image1=cv2.imread('lokesh.jpg',1)
+image = cv2.imread('imagee.jpg',1)
+cv2.imshow('ORIGINAL IMAGE',image)
+image[200, 200] = [255, 255, 255] 
+cv2.imshow('MODIFIED IMAGE', image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+## Output:
+![Screenshot 2024-09-13 232422](https://github.com/user-attachments/assets/013c2519-52e0-4d15-b7bd-e89accd61646)
+
+
+### 5)Image Resizing
+```
+cv2.imshow('ORIGINAL IMAGE',image)
+resized_image = cv2.resize(image, (image.shape[1] // 2, image.shape[0] // 2))
+cv2.imshow('RESIZED IMAGE', resized_image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+## Output:
+![Screenshot 2024-09-13 232628](https://github.com/user-attachments/assets/1ad8af5f-845e-4b4a-b4e4-1bd07c3842d7)
+
+
+### 6)Image Cropping
+```
+
+import cv2
+image = cv2.imread('imagee.jpg',1)
 x, y = 50, 50
 width, height = 100, 100
-roi = image1[y:y + height, x:x + width]
-cv2.imshow('Cropped Image', roi)
+roi = image[y:y + height, x:x + width]
+cv2.imshow('CROPPED IMAGE', roi)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-![image](https://github.com/user-attachments/assets/bdf43a06-5718-46d4-9005-010521c518ba)
+## Output:
+![Screenshot 2024-09-13 232808](https://github.com/user-attachments/assets/299bb309-6623-4725-b3db-ba221025d2b6)
 
-### vii)Image Flipping
-(1) Flip the original image horizontally and display it.
+### 7)Image Flipping
+## i)Flip the original image horizontally and display it.
 ```
 import cv2
-img = cv2.imread("lokesh.JPG")
-res=cv2.rotate(img,cv2.ROTATE_180)
-cv2.imshow('Original',img)
-cv2.imshow('Image Window', res)
+image = cv2.imread("imagee.jpg")
+res=cv2.rotate(image,cv2.ROTATE_180)
+cv2.imshow('ORIGINAL IMAGE',image)
+cv2.imshow('FLIPPED IMAGE', res)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-![image](https://github.com/user-attachments/assets/12435b16-42a7-4a4c-8f79-893e3f7f7fa9)
-(2) Flip the original image vertically and display it.
+## Output:
+![Screenshot 2024-09-13 232910](https://github.com/user-attachments/assets/05789a64-2f65-4fe1-8a34-552dcc1be184)
+
+
+## ii)Flip the original image vertically and display it.
 ```
 import cv2
-
-img = cv2.imread("lokesh.JPG")
-res=cv2.rotate(img,cv2.ROTATE_90_CLOCKWISE)
-# Display the HSV image
-cv2.imshow('Original',img)
-cv2.imshow('Image Window', res)
+image = cv2.imread("imagee.jpg")
+res=cv2.rotate(image,cv2.ROTATE_90_CLOCKWISE)
+cv2.imshow('ORIGINAL IMAGE',image)
+cv2.imshow('FLIPPED IMAGE', res)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-![image](https://github.com/user-attachments/assets/b1b58a12-a76e-48fb-8804-b9f4493bc22b)
+## Output:
+![Screenshot 2024-09-13 233105](https://github.com/user-attachments/assets/5633af19-2a95-4180-8cbe-49344dc1c82b)
 
 
-### viii)Write and Save the Modified Image
-Save the final modified image to your local directory.
+
+### 8)Write and Save the Modified Image
 ```
 import cv2
-img = cv2.imread("lokesh.JPG")
-cv2.imwrite('lokesh1.jpg',img)
+img = cv2.imread("image.jpg")
+cv2.imwrite('boat_pic.jpg',img)
 ```
-![image](https://github.com/user-attachments/assets/a3745440-01b0-48de-8448-ee26002c85c2)
+## Output:
+![Screenshot 2024-09-13 233227](https://github.com/user-attachments/assets/c5d4b1aa-c1a2-4cbf-bec3-75b46bc8ab5f)
 
 ## Result:
 Thus the images are read, displayed, and written ,and color conversion was performed  successfully using the python program.
-
 
 
 
